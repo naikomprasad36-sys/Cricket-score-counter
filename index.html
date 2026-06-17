@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            background-color: rgba(0, 0, 0, 0.473);
+            color: white;
+            width: 10rem;
+            padding: 12px;
+            font-size: 15px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin: 10px;
+            margin-top: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            text-shadow: 0 0 15px white;
+
+        }
+
+        img {
+            width: 26px;
+        }
+
+        body {
+
+            background-image: url(https://t3.ftcdn.net/jpg/13/87/67/20/360_F_1387672089_PJD2yRhpI6GK3RTODch7qEQPWhSDQb2Z.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .team div,
+        .runs div,
+        .summery div,
+        .ballType div,
+        .rshow div,
+        .result div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .text {
+            height: 2rem;
+            margin-top: 6px;
+        }
+
+        h3 {
+            font-size: 2rem;
+            color: #000000;
+            text-shadow: 0 0 15px white;
+
+        }
+
+        .team button:active {
+            background-color: rgb(0, 0, 0);
+            ;
+        }
+
+        .team button:focus {
+            background-color: rgb(32, 101, 190);
+            ;
+        }
+
+        button:hover {
+            box-shadow: 0 0 15px rgb(0, 0, 0);
+
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+
+        let run = 0;
+        let ball = 0;
+        let over = 0;
+        let rball = 120;
+        let teamMI_run = 0;
+        let teamRCB_run = 0;
+        let teamMI_wicket = 0;
+        let teamRCB_wicket = 0;
+        let wicket = 0;
+
+    </script>
+
+    <div class="team">
+
+        <div class="">
+            <H1>----- CRICKET SCORE COUNTER ----- </H1>
+        </div>
+
+        <div>
+            <button onclick="
+                    teamRCB_run=run;
+                    teamRCB_wicket=wicket;
+                    run=0;ball=0;over=0;rball=120;wicket=0
+                    ">
+                <img src="https://iconape.com/wp-content/png_logo_vector/mumbai-indians-logo.png" alt="">
+                MI
+            </button>
+
+            <button onclick="
+                    teamMI_run=run;
+                    teamMI_wicket=wicket;
+                    run=0;ball=0;over=0;rball=120;wicket=0">
+                <img src="https://1000logos.net/wp-content/uploads/2024/03/Royal-Challengers-Bengaluru-Logo-500x281.jpg"
+                    alt="">
+                RCB</button>
+
+        </div>
+    </div>
+
+    <!-- run section -->
+    <div class="runs">
+
+        <div class="text">
+            <h3>---- Runs ----</h3>
+        </div>
+
+        <div>
+            <button onclick="
+            (run=run+0);
+            ball++;
+            (ball % 6 == 0) 
+            ? (++over) : (over) ; console.log(`total run ${run}`)">
+                <img src="https://img.icons8.com/?size=48&id=4cUiKDwg0tNi&format=png" alt="">
+                Dot ball
+            </button>
+
+            <button onclick="
+            (run=run+1);
+            ball++; (ball%6==0) ? (++over) : (over); console.log(`total run ${run}`)">
+                <img src="https://img.icons8.com/?size=64&id=l1WEsTEkba1B&format=png" alt=""> +1 run
+            </button>
+
+            <button onclick="
+            (run=run+2);ball++; (ball%6==0) ? (++over) : (over); console.log(`total run ${run}`)">
+                <img src="https://img.icons8.com/?size=64&id=qPtN2YC9glNR&format=png" alt=""> +2 run
+            </button>
+
+            <button onclick="
+            (run=run+4);ball++; (ball%6==0) ? (++over) : (over); console.log(`total run ${run}`)">
+                <img src="https://img.icons8.com/?size=64&id=a1CcmqRwzJtY&format=png" alt=""> Four (4)
+            </button>
+
+            <button onclick="
+            (run=run+6);ball++; (ball%6==0) ? (++over) : (over); console.log(`total run ${run}`)">
+                <img src="https://img.icons8.com/?size=80&id=n1RILQnjYCnx&format=png" alt=""> Six (6)
+            </button>
+
+
+        </div>
+
+    </div>
+    <!-- Ball type section -->
+    <div class="ballType">
+        <div class="text">
+            <h3>---- Ball type ----</h3>
+        </div>
+        <div>
+            <button onclick="
+                wicket=wicket+1;
+                (wicket>=10) ? console.log(`All OUT`) : console.log(`total wicket = ${wicket}`)">
+                <img src="https://img.icons8.com/?size=80&id=XjXOsa8DhAVP&format=png" alt="">
+                wicket</button>
+
+            <button onclick="
+            (run=run+1);console.log(`total run  + wide run (1) = ${run}`)">
+                <img src="https://cdn-icons-png.flaticon.com/128/7037/7037800.png" alt="">
+                Wide Ball</button>
+        </div>
+
+
+    </div>
+
+    <!-- Summery section -->
+    <div class="summery">
+        <div class="text">
+            <h3>---- Summery ----</h3>
+        </div>
+        <div>
+            <button onclick="
+                console.log(`total Over ${over}`)">
+                <img src="https://img.icons8.com/?size=80&id=Zy5ghkQj2rKy&format=png" alt="">
+                Over done
+            </button>
+
+            <button onclick="
+            console.log(`total ball ${ball}`);"><img src="https://img.icons8.com/?size=48&id=AF2FJWsPaMoY&format=png"
+                    alt="">
+                Ball done
+            </button>
+
+            <button onclick="
+            console.log(`total run ${run}`);">
+                <img src="https://cdn-icons-png.flaticon.com/128/7037/7037818.png" alt="">
+                total run
+            </button>
+
+            <button onclick="
+            rball=rball-ball;
+            console.log(`Remaining balls are ${rball}`)">
+                <img src="https://cdn-icons-png.flaticon.com/128/12338/12338815.png" alt="">
+                Remaing Ball
+            </button>
+
+            <button onclick="
+            rover=20-over;
+            console.log(`Remaining Overs are ${rover}`)">
+                <img src="https://cdn-icons-png.flaticon.com/128/7824/7824774.png" alt="">
+                Remaing Over
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- <div class="rshow">
+
+       
+    </div> -->
+
+    <div class="result">
+        <div class="text">
+            <h3>---- Final Result ----</h3>
+        </div>
+        <div>
+            <button onclick="
+            teamRCB_run=run;
+            teamRCB_wicket=wicket;
+
+            console.log(`***---MI---***
+            \n total run = ${teamMI_run}
+            \n total wicket = ${teamMI_wicket}
+
+            \n ***---RCB---***
+            \n total run = ${teamRCB_run}
+            \n total wicket = ${teamRCB_wicket}`);
+
+            (teamMI_run > teamRCB_run)
+            ? console.log(`THE WINNER IS MI`)
+            : console.log(` THE WINNER IS RCB `);
+            "><img src="https://cdn-icons-png.flaticon.com/128/9913/9913576.png" alt="">
+                Show Result
+            </button>
+        </div>
+    </div>
+
+</body>
+
+</html>
